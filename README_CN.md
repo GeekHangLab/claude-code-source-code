@@ -11,7 +11,7 @@
 
 ## 目录
 
-- [深度分析文档 (`docs/`)](#深度分析文档-docs) — 遥测、模型代号、卧底模式、远程控制、未来路线图
+- [深度分析文档 (`docs/`)](#深度分析文档-docs) — 遥测、模型代号、卧底模式、远程控制、未来路线图、学习指南
 - [缺失模块说明](#缺失模块说明108-个模块) — 108 个被 feature gate 移除的模块
 - [架构概览](#架构概览) — 入口 → 查询引擎 → 工具/服务/状态
 - [构建说明](#构建说明) — 为什么不能直接编译
@@ -29,14 +29,16 @@ docs/
 │   ├── [02-hidden-features-and-codenames.md]  # Codenames (Capybara/Tengu/Numbat), feature flags, internal vs external
 │   ├── [03-undercover-mode.md]                # Undercover Mode — hiding AI authorship in open-source repos
 │   ├── [04-remote-control-and-killswitches.md]# Remote Control — managed settings, killswitches, model overrides
-│   └── [05-future-roadmap.md]                 # Future Roadmap — Numbat, KAIROS, voice mode, unreleased tools
+│   ├── [05-future-roadmap.md]                 # Future Roadmap — Numbat, KAIROS, voice mode, unreleased tools
+│   └── [06-learning-guide.md]                 # Learning Guide — requirements, architecture, highlights, key takeaways
 │
 └── zh/                                        # 中文
     ├── [01-遥测与隐私分析.md]                    # 遥测与隐私 — 收集了什么，为什么无法退出
     ├── [02-隐藏功能与模型代号.md]                # 隐藏功能 — 模型代号，feature flag，内外用户差异
     ├── [03-卧底模式分析.md]                     # 卧底模式 — 在开源项目中隐藏 AI 身份
     ├── [04-远程控制与紧急开关.md]                # 远程控制 — 托管设置，紧急开关，模型覆盖
-    └── [05-未来路线图.md]                       # 未来路线图 — Numbat，KAIROS，语音模式，未上线工具
+    ├── [05-未来路线图.md]                       # 未来路线图 — Numbat，KAIROS，语音模式，未上线工具
+    └── [06-学习指南与知识提炼.md]                # 学习指南 — 需求、架构、亮点、核心学习要点
 ```
 
 > 点击文件名即可跳转到对应报告。
@@ -48,6 +50,7 @@ docs/
 | 03 | **卧底模式** | Anthropic 员工在公开仓库自动进入卧底模式。模型指令："**不要暴露你的掩护身份**" — 剥离所有 AI 归属，commit 看起来像人类写的。**没有强制关闭选项。** | [EN](docs/en/03-undercover-mode.md) · [中文](docs/zh/03-卧底模式分析.md) |
 | 04 | **远程控制与 Killswitch** | 每小时轮询 `/api/claude_code/settings`。危险变更弹出阻塞对话框 — **拒绝 = 程序退出**。6+ 紧急开关（绕过权限、快速模式、语音模式、分析 sink）。GrowthBook 可无同意改变任何用户行为。 | [EN](docs/en/04-remote-control-and-killswitches.md) · [中文](docs/zh/04-远程控制与紧急开关.md) |
 | 05 | **未来路线图** | **Numbat** 代号确认。Opus 4.7 / Sonnet 4.8 开发中。**KAIROS** = 完全自主代理模式，心跳 `<tick>`、推送通知、PR 订阅。语音模式（push-to-talk）已就绪。发现 17 个未上线工具。 | [EN](docs/en/05-future-roadmap.md) · [中文](docs/zh/05-未来路线图.md) |
+| 06 | **学习指南** | 完整学习文档，涵盖需求分析、架构设计、12 层渐进式机制、关键设计模式、隐藏功能、未来路线图与核心学习要点。 | [EN](docs/en/06-learning-guide.md) · [中文](docs/zh/06-学习指南与知识提炼.md) |
 
 ---
 

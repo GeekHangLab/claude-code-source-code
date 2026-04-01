@@ -11,7 +11,7 @@
 
 ## Table of Contents
 
-- [Deep Analysis Reports (`docs/`)](#deep-analysis-reports-docs) — Telemetry, codenames, undercover mode, remote control, future roadmap
+- [Deep Analysis Reports (`docs/`)](#deep-analysis-reports-docs) — Telemetry, codenames, undercover mode, remote control, future roadmap, learning guide
 - [Missing Modules Notice](#missing-modules-notice-108-modules) — 108 feature-gated modules not in the npm package
 - [Architecture Overview](#architecture-overview) — Entry → Query Engine → Tools/Services/State
 - [Tool System & Permissions](#tool-system-architecture) — 40+ tools, permission flow, sub-agents
@@ -31,14 +31,16 @@ docs/
 │   ├── [02-hidden-features-and-codenames.md]  # Codenames (Capybara/Tengu/Numbat), feature flags, internal vs external
 │   ├── [03-undercover-mode.md]                # Undercover Mode — hiding AI authorship in open-source repos
 │   ├── [04-remote-control-and-killswitches.md]# Remote Control — managed settings, killswitches, model overrides
-│   └── [05-future-roadmap.md]                 # Future Roadmap — Numbat, KAIROS, voice mode, unreleased tools
+│   ├── [05-future-roadmap.md]                 # Future Roadmap — Numbat, KAIROS, voice mode, unreleased tools
+│   └── [06-learning-guide.md]                 # Learning Guide — requirements, architecture, highlights, key takeaways
 │
 └── zh/                                        # 中文
     ├── [01-遥测与隐私分析.md]                    # 遥测与隐私 — 收集了什么，为什么无法退出
     ├── [02-隐藏功能与模型代号.md]                # 隐藏功能 — 模型代号，feature flag，内外用户差异
     ├── [03-卧底模式分析.md]                     # 卧底模式 — 在开源项目中隐藏 AI 身份
     ├── [04-远程控制与紧急开关.md]                # 远程控制 — 托管设置，紧急开关，模型覆盖
-    └── [05-未来路线图.md]                       # 未来路线图 — Numbat，KAIROS，语音模式，未上线工具
+    ├── [05-未来路线图.md]                       # 未来路线图 — Numbat，KAIROS，语音模式，未上线工具
+    └── [06-学习指南与知识提炼.md]                # 学习指南 — 需求、架构、亮点、核心学习要点
 ```
 
 > Click any filename above to jump to the full report.
@@ -50,6 +52,7 @@ docs/
 | 03 | **Undercover Mode** | Anthropic employees auto-enter undercover mode in public repos. Model instructed: *"Do not blow your cover"* — strip all AI attribution, write commits "as a human developer would." **No force-OFF exists.** Raises transparency questions for open-source communities. |
 | 04 | **Remote Control** | Hourly polling of `/api/claude_code/settings`. Dangerous changes show blocking dialog — **reject = app exits**. 6+ killswitches (bypass permissions, fast mode, voice mode, analytics sink). GrowthBook flags can change any user's behavior without consent. |
 | 05 | **Future Roadmap** | **Numbat** codename confirmed. Opus 4.7 / Sonnet 4.8 in development. **KAIROS** = fully autonomous agent mode with `<tick>` heartbeats, push notifications, PR subscriptions. Voice mode (push-to-talk) ready but gated. 17 unreleased tools found. |
+| 06 | **Learning Guide** | Comprehensive guide covering requirements, architecture, the 12 progressive harness mechanisms, key design patterns, hidden features, future roadmap, and learning takeaways. |
 
 ---
 
